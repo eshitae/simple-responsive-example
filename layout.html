@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Area Layout</title>
+
+    <style>
+        .header, .nav, .main, .sidebar, .advertise, .footer{
+            background-color: bisque;
+           border: 2px solid aquamarine;
+           padding: 5px;
+           border-radius: 5px;
+        }
+        .header{
+            grid-area: header;
+        }
+        .main{
+            grid-area: main;
+        }
+        .sidebar{
+            grid-area: sidebar;
+        }
+        .advertise{
+            grid-area: advertise;
+        }
+        .footer{
+            grid-area: footer;
+        }
+        .container{
+            display: grid;
+            gap: 20px;
+            grid-template-areas: 
+             " header header header header"
+             "nav     main   main   sidebar"
+             "nav     main   main   advertise"
+             "footer  footer footer footer"
+             ;
+        }
+        @media screen and (max-width: 576px) {
+            .container{
+                grid-template-areas: 
+                 "header"
+                 "nav"
+                 "main"
+                 "sidebar"
+                 "advertise"
+                 "footer"
+                 ;
+            }
+            
+        }
+        @media screen and(min-width: 576px) and (max-width:) {
+            .container{
+                grid-template-areas: 
+                 "header header header"
+                 "nav   nav   nav"
+                 "sidebar main main"
+                 "advertise footer footer"
+                 
+                 ;
+            }
+            
+        }
+    </style>
+</head>
+<body class="container">
+    <header class="header">
+        <h2>The Header</h2>
+
+    </header>
+    <nav class="nav">
+        <ul>
+            <li><a href="">nav 1</a></li>
+            <li><a href="">nav 2</a></li>
+            <li><a href="">nav 3</a></li>
+
+        </ul>
+    </nav>
+    <main class="main">
+        <article>
+            <h3>Main Article 1</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non corrupti, aperiam eveniet quae minima consequatur sequi deleniti, sit nisi cupiditate qui excepturi repudiandae quam eos expedita eligendi quibusdam quasi dolorum?</p>
+        </article>
+        <article>
+            <h3>Main Article 2</h3>
+            <p>Earum repellendus perspiciatis dolorem sunt maiores cupiditate excepturi maxime, adipisci quos accusamus aut nulla libero sequi sit vitae repudiandae tenetur! Quasi est laboriosam, ratione animi sequi earum aliquam reprehenderit ea?</p>
+        </article>
+    </main>
+    <aside>
+        <div class="sidebar">
+            <h4>Sidebar</h4>
+        </div>
+    </aside>
+    <div class="advertise">
+        <h4>Advertise</h4>
+    </div>
+    <div class="footer">
+        <h3>The Footer</h3>
+    </div>
+
+    
+</body>
+</html>
